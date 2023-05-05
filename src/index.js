@@ -54,7 +54,7 @@ function BookList(){
 
 const Book = () =>{
   return (
-  <article>
+  <article className='book'>
     <BookImage/>
     <BookTitle/>
     <BookAuthor/>
