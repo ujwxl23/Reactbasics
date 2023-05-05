@@ -52,14 +52,18 @@ function BookList(){
   );
 }
 
+const para = 'This is a book written by Gaur Gopal Das.'; 
+const author = 'Gaur Gopal Das'
+
 const Book = () =>{
   return (
   <article className='book'>
     <BookImage/>
     <BookTitle/>
     <BookAuthor/>
+    <p>{para}</p> 
   </article>
-  );
+  ); // {variable} -> This must be a return type only and {} is used to enter code in javascript even use js functionality.
   };
 
 const BookImage = () => ( 
@@ -73,7 +77,7 @@ const BookTitle = () => (
 //JSX css must contain camel font and values must be inside single quotation.
 const BookAuthor =() => (
   <h4 style={{ color:'#617d98', fontSize: '0.75rem', marginTop: '0.25rem'}}> 
-    Gaur Gopal Das</h4> //style has 2 curly braces {{}} because first one for entering to javascript and the other to create an object 
+    {author.toUpperCase()}</h4> //style has 2 curly braces {{}} because first one for entering to javascript and the other to create an object 
 )
 
 
