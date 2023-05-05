@@ -1,6 +1,6 @@
 import React from 'react'; //To add components
 import ReactDOM from 'react-dom';
-import './index.css';
+import './index.css'; //Importing index.css
 
 
 //JSX Rules
@@ -70,8 +70,10 @@ const BookTitle = () => (
   <h1>Energize Your Mind: Learn the Art of Mastering your Mind</h1>
 );
 
+//JSX css must contain camel font and values must be inside single quotation.
 const BookAuthor =() => (
-  <h4>Gaur Gopal Das</h4>
+  <h4 style={{ color:'#617d98', fontSize: '0.75rem', marginTop: '0.25rem'}}> 
+    Gaur Gopal Das</h4> //style has 2 curly braces {{}} because first one for entering to javascript and the other to create an object 
 )
 
 
