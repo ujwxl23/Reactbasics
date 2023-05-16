@@ -42,43 +42,85 @@ import './index.css'; //Importing index.css
 // }
 
 
+//Static website 
+// function BookList(){
+//   return( //Adding props for dynamic naming and properties (Very imp)
+//     <section className='booklist'>
+//       <Book authorName='Gopal' /> 
+//       <Book/>
+//       <Book credits='lifeDipression'/>
+//     </section>
+//   );
+// }
+
+// const para = 'This is a book written by Gaur Gopal Das.'; 
+// const author = 'Gaur Gopal Das'
+
+// const Book = (props) =>{
+//   return (
+//   <article className='book'>
+//     <BookImage/>
+//     <BookTitle/>
+//     <BookAuthor/>
+//     <p>{props.authorName}</p>
+//     <p>{props.credits}</p>
+//     <p>{para}</p> 
+//   </article>
+//   ); // {variable} -> This must be a return type only and {} is used to enter code in javascript even use js functionality.
+//   };
+
+// const BookImage = () => ( 
+//   <img src='https://images-eu.ssl-images-amazon.com/images/I/71B4h-dSVzL._AC_UL600_SR600,400_.jpg' alt=''/>
+//   );
+
+// const BookTitle = () => (
+//   <h1>Energize Your Mind: Learn the Art of Mastering your Mind</h1>
+// );
+
+// //JSX css must contain camel font and values must be inside single quotation.
+// const BookAuthor =() => (
+//   <h4 style={{ color:'#617d98', fontSize: '0.75rem', marginTop: '0.25rem'}}> 
+//     {author.toUpperCase()}</h4> //style has 2 curly braces {{}} because first one for entering to javascript and the other to create an object 
+// )
+
+
+//Dynamic website(content using props)
+
+const firstBook = {
+  img: 'https://images-eu.ssl-images-amazon.com/images/I/71B4h-dSVzL._AC_UL600_SR600,400_.jpg',
+  title: 'Energize Your Mind: Learn the Art of Mastering your Mind',
+  BookAuthor: 'Gaur Gopal Das',
+  para: 'This is a book written by Gaur Gopal Das.'
+}
+
+const secondBook = {
+  img: 'https://m.media-amazon.com/images/I/81N7FmJhbhL._AC_UY327_FMwebp_QL65_.jpg',
+  title: 'Life Amazing Secrets',
+  BookAuthor: 'Gaur Gopal Das',
+  para: 'This is a book written by Gaur Goapl Das.'
+}
+
 function BookList(){
-  return(
+  return( //Adding props for dynamic naming and properties (Very imp)
     <section className='booklist'>
-      <Book/>
-      <Book/>
-      <Book/>
+      <Book img={firstBook.img} title={firstBook.title} BookAuthor={firstBook.BookAuthor} para={firstBook.para} /> 
+      <Book img={secondBook.img} title={secondBook.title} BookAuthor={secondBook.BookAuthor} para={secondBook.para}/>
     </section>
   );
 }
 
-const para = 'This is a book written by Gaur Gopal Das.'; 
-const author = 'Gaur Gopal Das'
 
-const Book = () =>{
+const Book = (props) =>{
   return (
   <article className='book'>
-    <BookImage/>
-    <BookTitle/>
-    <BookAuthor/>
-    <p>{para}</p> 
+    <img src={props.img} alt=''/>
+    <h1>{props.title}</h1>
+    <h4>{props.authorName}</h4>
+    <p>{props.para}</p> 
   </article>
   ); // {variable} -> This must be a return type only and {} is used to enter code in javascript even use js functionality.
   };
 
-const BookImage = () => ( 
-  <img src='https://images-eu.ssl-images-amazon.com/images/I/71B4h-dSVzL._AC_UL600_SR600,400_.jpg' alt=''/>
-  );
-
-const BookTitle = () => (
-  <h1>Energize Your Mind: Learn the Art of Mastering your Mind</h1>
-);
-
-//JSX css must contain camel font and values must be inside single quotation.
-const BookAuthor =() => (
-  <h4 style={{ color:'#617d98', fontSize: '0.75rem', marginTop: '0.25rem'}}> 
-    {author.toUpperCase()}</h4> //style has 2 curly braces {{}} because first one for entering to javascript and the other to create an object 
-)
 
 
 ReactDOM.render(<BookList/>,document.getElementById('root')); // Must contain a closing tag.... //Contains two arguments  what to render and the where to render it in html file (div id)
