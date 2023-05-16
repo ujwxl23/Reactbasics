@@ -109,8 +109,9 @@ function BookList(){
   );
 }
 
-
+//({img, title, authorName, para})->required props - instead of writing (props)
 const Book = (props) =>{
+  // const {img, title, authorName, para} = props; (Writing this, we will not req to write prop.[name])
   return (
   <article className='book'>
     <img src={props.img} alt=''/>
