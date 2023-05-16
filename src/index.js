@@ -103,7 +103,8 @@ const secondBook = {
 function BookList(){
   return( //Adding props for dynamic naming and properties (Very imp)
     <section className='booklist'>
-      <Book img={firstBook.img} title={firstBook.title} BookAuthor={firstBook.BookAuthor} para={firstBook.para} /> 
+      <Book img={firstBook.img} title={firstBook.title} BookAuthor={firstBook.BookAuthor} para={firstBook.para}>
+        <p>Working to the top</p> </Book> 
       <Book img={secondBook.img} title={secondBook.title} BookAuthor={secondBook.BookAuthor} para={secondBook.para}/>
     </section>
   );
@@ -118,6 +119,7 @@ const Book = (props) =>{
     <h1>{props.title}</h1>
     <h4>{props.authorName}</h4>
     <p>{props.para}</p> 
+    {props.children}
   </article>
   ); // {variable} -> This must be a return type only and {} is used to enter code in javascript even use js functionality.
   };
