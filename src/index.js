@@ -102,6 +102,7 @@ const secondBook = {
 
 function BookList(){
   return( //Adding props for dynamic naming and properties (Very imp)
+          //Adding children prop -> Used to add content for especially for one tab only. 
     <section className='booklist'>
       <Book img={firstBook.img} title={firstBook.title} BookAuthor={firstBook.BookAuthor} para={firstBook.para}>
         <p>Working to the top</p> </Book> 
@@ -113,13 +114,14 @@ function BookList(){
 //({img, title, authorName, para})->required props - instead of writing (props)
 const Book = (props) =>{
   // const {img, title, authorName, para} = props; (Writing this, we will not req to write prop.[name])
+  // Adding childern prop is the content between the opening and closing. (Here:p->Working to the top)
   return (
   <article className='book'>
     <img src={props.img} alt=''/>
     <h1>{props.title}</h1>
     <h4>{props.authorName}</h4>
     <p>{props.para}</p> 
-    {props.children}
+    {props.children} 
   </article>
   ); // {variable} -> This must be a return type only and {} is used to enter code in javascript even use js functionality.
   };
